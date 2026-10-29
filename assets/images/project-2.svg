@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091410" />
+      <stop offset="50%" stop-color="#0f261e" />
+      <stop offset="100%" stop-color="#193322" />
+    </linearGradient>
+    <linearGradient id="bladeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <radialGradient id="ruinGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.7" />
+      <stop offset="60%" stop-color="#059669" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg2)" />
+
+  <!-- Ruin Pillars & Atmosphere -->
+  <circle cx="400" cy="250" r="220" fill="url(#ruinGlow)" />
+
+  <!-- Monoliths / Ancient Architecture -->
+  <polygon points="120,480 150,180 220,190 200,480" fill="#041b14" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5" />
+  <polygon points="620,480 600,140 670,150 680,480" fill="#041b14" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5" />
+  <polygon points="260,480 280,240 330,245 320,480" fill="#062e22" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5" />
+  <polygon points="500,480 480,210 530,215 540,480" fill="#062e22" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5" />
+
+  <!-- Central Relic Sword Silhouette with Glow -->
+  <g transform="translate(400, 240)">
+    <!-- Aura -->
+    <ellipse cx="0" cy="0" rx="40" ry="160" fill="#34d399" opacity="0.15" />
+    <!-- Blade -->
+    <path d="M 0 -150 L 12 40 L 0 65 L -12 40 Z" fill="url(#bladeGlow)" filter="drop-shadow(0 0 10px #34d399)" />
+    <!-- Crossguard -->
+    <rect x="-35" y="40" width="70" height="10" rx="3" fill="#0f172a" stroke="#fbbf24" stroke-width="2" />
+    <!-- Grip & Pommel -->
+    <rect x="-6" y="50" width="12" height="35" rx="2" fill="#78350f" />
+    <circle cx="0" cy="92" r="9" fill="#fbbf24" />
+    <!-- Rune engravings -->
+    <line x1="0" y1="-120" x2="0" y2="10" stroke="#ecfdf5" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Floating Combat Metric / Systems Badges -->
+  <rect x="40" y="40" width="170" height="40" rx="6" fill="#061f17" fill-opacity="0.85" stroke="#10b981" stroke-width="1" />
+  <text x="55" y="65" fill="#34d399" font-family="monospace" font-size="12" font-weight="bold">SYSTEM: MELEE COMBAT</text>
+
+  <rect x="610" y="40" width="150" height="28" rx="4" fill="#061f17" fill-opacity="0.85" stroke="#34d399" stroke-width="1" />
+  <text x="625" y="58" fill="#e2e8f0" font-family="monospace" font-size="11">HITBOX & FRAME DATA</text>
+
+  <rect x="0" y="492" width="800" height="8" fill="#10b981" />
+</svg>

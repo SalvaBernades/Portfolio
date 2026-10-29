@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salva | Diseñador de Videojuegos & Game Systems</title>
+  <meta name="description" content="Portfolio de diseño de videojuegos: mecánicas, diseño de niveles, balanceo y prototipado interactivo.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Tipografía moderna y optimizada -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fondo interactivo ligero de partículas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Navegación -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-bracket">[</span>SALVA<span class="logo-dot">.</span>GD<span class="logo-bracket">]</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#filosofia" class="nav-link">Metodología</a></li>
+          <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+          <li><a href="#contacto" class="nav-link btn-nav">Contactar</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón de sonido UI opcional (Game Feel) y Menú Móvil -->
+      <div class="header-actions">
+        <button id="sound-toggle" class="icon-btn" aria-label="Efectos de sonido de interfaz" title="Sonido UI: Silenciado">
+          <svg class="sound-off-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+          <svg class="sound-on-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container hero-content">
+        <div class="badge-status">
+          <span class="status-dot"></span>
+          <span>Disponible para proyectos y estudios</span>
+        </div>
+
+        <h1 class="hero-title">
+          Diseñador de <span class="gradient-text">Videojuegos</span> &amp; Arquitecto de Sistemas
+        </h1>
+
+        <p class="hero-description">
+          Creo mecánicas con <em>game feel</em> gratificante, diseño niveles que guían de forma intuitiva al jugador y estructuro sistemas balanceados desde el documento (GDD) hasta el prototipo funcional.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#proyectos" class="btn btn-primary">
+            <span>Ver Proyectos</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn-secondary">
+            <span>Hablar de un Proyecto</span>
+          </a>
+        </div>
+
+        <!-- Quick Specs / Telemetría Gamer -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">UE5 / Unity</span>
+            <span class="stat-label">Motores Principales</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Core Loop</span>
+            <span class="stat-label">Mecánicas &amp; Game Feel</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Level Design</span>
+            <span class="stat-label">Pacing &amp; Whiteboxing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS SECTION -->
+    <section class="section projects" id="proyectos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// PORTFOLIO</span>
+          <h2 class="section-title">Proyectos Destacados</h2>
+          <p class="section-subtitle">Una selección de prototipos, diseño de sistemas y niveles en los que he trabajado.</p>
+        </div>
+
+        <!-- Filtros de categoría -->
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="game-design">Game Design</button>
+          <button class="filter-btn" data-filter="level-design">Level Design</button>
+          <button class="filter-btn" data-filter="systems">Sistemas &amp; UI</button>
+        </div>
+
+        <!-- Grid de Proyectos -->
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- Proyecto 1 -->
+          <article class="project-card" data-category="game-design level-design" data-project="chrono-shift">
+            <div class="project-thumb-wrapper">
+              <img src="assets/images/project-1.svg" alt="Project Chrono-Shift" class="project-img" loading="lazy">
+              <div class="project-badge">Action / Platformer</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Mecánica Temporal</span>
+              </div>
+              <h3 class="project-title">Chrono-Shift: Puzzle Platformer</h3>
+              <p class="project-excerpt">
+                Mecánica central de rebobinado temporal selectivo para resolver acertijos físicos en tiempo real sin romper el ritmo del plataformeo.
+              </p>
+              <div class="project-footer">
+                <span class="project-role">Rol: Lead Game &amp; Level Designer</span>
+                <button class="btn-text open-modal-btn">Ver Ficha &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 2 -->
+          <article class="project-card" data-category="game-design systems" data-project="aethelgard">
+            <div class="project-thumb-wrapper">
+              <img src="assets/images/project-2.svg" alt="Echoes of Aethelgard" class="project-img" loading="lazy">
+              <div class="project-badge">Action RPG</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Unreal Engine 5</span>
+                <span class="tag">Blueprints</span>
+                <span class="tag">Combat System</span>
+              </div>
+              <h3 class="project-title">Echoes of Aethelgard</h3>
+              <p class="project-excerpt">
+                Diseño del sistema de combate melee rítmico: definición de hitboxes, anim-canceling, aturdimiento y balance de curvas de riesgo/recompensa.
+              </p>
+              <div class="project-footer">
+                <span class="project-role">Rol: Combat &amp; Systems Designer</span>
+                <button class="btn-text open-modal-btn">Ver Ficha &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="project-card" data-category="systems" data-project="neon-syndicate">
+            <div class="project-thumb-wrapper">
+              <img src="assets/images/project-3.svg" alt="Neon Syndicate" class="project-img" loading="lazy">
+              <div class="project-badge">Stealth / Tactics</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Figma</span>
+                <span class="tag">Game UX/UI</span>
+                <span class="tag">IA Detection</span>
+              </div>
+              <h3 class="project-title">Neon Syndicate: Infiltración Táctica</h3>
+              <p class="project-excerpt">
+                Arquitectura de información para el HUD y visor de ciberimplantes. Matriz de conos de visión y umbrales de alerta sonora para NPCs.
+              </p>
+              <div class="project-footer">
+                <span class="project-role">Rol: Game UI/UX &amp; AI Systems</span>
+                <button class="btn-text open-modal-btn">Ver Ficha &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 4 -->
+          <article class="project-card" data-category="game-design level-design" data-project="tiny-horizons">
+            <div class="project-thumb-wrapper">
+              <img src="assets/images/project-4.svg" alt="Tiny Horizons" class="project-img" loading="lazy">
+              <div class="project-badge">Cozy Strategy</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Godot</span>
+                <span class="tag">Economía &amp; Balances</span>
+                <span class="tag">Low-Poly</span>
+              </div>
+              <h3 class="project-title">Tiny Horizons: Colonización Flotante</h3>
+              <p class="project-excerpt">
+                Simulación y balance de economía en hojas de cálculo y prototipado rápido en Godot con generación procedural de islas hexagonales.
+              </p>
+              <div class="project-footer">
+                <span class="project-role">Rol: Economy Designer &amp; Prototyper</span>
+                <button class="btn-text open-modal-btn">Ver Ficha &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES & HERRAMIENTAS -->
+    <section class="section skills" id="habilidades">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// COMPETENCIAS</span>
+          <h2 class="section-title">Habilidades &amp; Herramientas</h2>
+          <p class="section-subtitle">Capacidades técnicas y conceptuales aplicadas al ciclo de vida del juego.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Card 1 -->
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="skill-title">Diseño de Mecánicas &amp; Sistemas</h3>
+            <p class="skill-desc">Construcción de 'Core Loops', curvas de dificultad, balance de recursos y documentos de diseño (GDD) precisos y colaborativos.</p>
+            <div class="skill-pills">
+              <span>Core Loops</span>
+              <span>GDD</span>
+              <span>Game Balancer</span>
+              <span>Mecánicas 2D/3D</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="skill-title">Level Design &amp; Whiteboxing</h3>
+            <p class="skill-desc">Guía visual intuitiva, arquitectura espacial, modulación de ritmo (pacing), puntos de interés (POIs) y pruebas de iluminación inicial.</p>
+            <div class="skill-pills">
+              <span>Greyboxing</span>
+              <span>Beat Charts</span>
+              <span>Pacing</span>
+              <span>Affordances</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="skill-title">Motores &amp; Prototipado</h3>
+            <p class="skill-desc">Implementación funcional directa de mecánicas para validar sensaciones de juego de forma temprana sin depender de arte final.</p>
+            <div class="skill-pills">
+              <span>Unreal Engine 5</span>
+              <span>Unity</span>
+              <span>C# &amp; Blueprints</span>
+              <span>Godot</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="skill-card">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-title">Game Feel &amp; UI/UX</h3>
+            <p class="skill-desc">Integración de respuesta háptica, pantallas dinámicas (screenshake), feedback sonoro/visual, microinteracciones y ergonomía de control.</p>
+            <div class="skill-pills">
+              <span>Juice &amp; Game Feel</span>
+              <span>HUD Wireframing</span>
+              <span>Blender</span>
+              <span>Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODOLOGÍA / PROCESO -->
+    <section class="section philosophy" id="filosofia">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// FILOSOFÍA DE TRABAJO</span>
+          <h2 class="section-title">De la Idea al Game Feel</h2>
+          <p class="section-subtitle">Un flujo de trabajo iterativo enfocado en lo que realmente siente el jugador.</p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <h4 class="step-title">Definición de Pilares</h4>
+            <p class="step-text">¿Qué emoción busca transmitir el juego? Establezco de 2 a 3 pilares que actúan como brújula para descartar ideas dispersas.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <h4 class="step-title">Whiteboxing &amp; Prototipo</h4>
+            <p class="step-text">Cubos grises y colisiones básicas. Si el juego no es divertido en blanco y negro, más polígonos no lo salvarán.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <h4 class="step-title">Playtesting &amp; Feedback</h4>
+            <p class="step-text">Observación de jugadores reales sin intervención. Identificación de puntos de frustración y ajuste fino de parámetros.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">04</span>
+            <h4 class="step-title">Pulido &amp; Game Juice</h4>
+            <p class="step-text">Micro-pausas de impacto (hit-stop), cámaras dinámicas, partículas y sonido que elevan la satisfacción del jugador al máximo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="section about" id="sobre-mi">
+      <div class="container">
+        <div class="about-wrapper">
+          <div class="about-image-col">
+            <div class="about-image-card">
+              <img src="assets/images/avatar.svg" alt="Foto de perfil" class="about-avatar">
+              <div class="about-experience-badge">
+                <span class="exp-title">Game Designer</span>
+                <span class="exp-subtitle">Passionate about Mechanics &amp; Feel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text-col">
+            <span class="section-tag">// BIOGRAFÍA</span>
+            <h2 class="section-title">Diseñando juegos pensando en las decisiones del jugador</h2>
+            <p class="about-bio">
+              ¡Hola! Soy <strong>Salva</strong>. Me apasiona el diseño de videojuegos porque es la intersección perfecta entre psicología, arte interactivo y matemáticas de sistemas.
+            </p>
+            <p class="about-bio">
+              Me enfoco en el <em>game feel</em>: esa sensación casi física de control que hace que mover un personaje o disparar un arma se sienta satisfactorio en las manos. Trabajo tanto en la documentación conceptual como en el código de prototipado para asegurar que las ideas se sientan tan bien en el mando como en el papel.
+            </p>
+
+            <div class="social-links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+              </a>
+
+              <a href="https://itch.io" target="_blank" rel="noopener noreferrer" class="social-btn" title="Itch.io">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M2.38 0A2.378 2.378 0 0 0 0 2.38v2.96c0 .49.19.98.54 1.33l1.83 1.84c.36.35.85.55 1.35.55h.58l.41 1.65A15.34 15.34 0 0 0 12 24a15.34 15.34 0 0 0 7.29-13.29l.41-1.65h.58c.5 0 .99-.2 1.35-.55l1.83-1.84c.35-.35.54-.84.54-1.33V2.38A2.378 2.378 0 0 0 21.62 0H2.38zm6.54 9.17c1.33 0 2.42 1.08 2.42 2.41 0 1.34-1.09 2.42-2.42 2.42a2.416 2.416 0 0 1-2.42-2.42c0-1.33 1.09-2.41 2.42-2.41zm6.16 0c1.33 0 2.42 1.08 2.42 2.41 0 1.34-1.09 2.42-2.42 2.42a2.416 2.416 0 0 1-2.42-2.42c0-1.33 1.09-2.41 2.42-2.41z"/>
+                </svg>
+                <span>Itch.io</span>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="https://artstation.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="ArtStation">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M0 17.723l2.027 3.504h.001a2.424 2.424 0 0 0 2.164 1.332h13.256l-3.59-6.221H3.613L0 17.723zM23.766 17.185L14.733 1.54A2.434 2.434 0 0 0 12.631.332c-.878 0-1.674.467-2.102 1.208L9.362 3.565l9.78 16.94 2.607-4.515a2.43 2.43 0 0 0 .017-2.405zm-14.743-4.54l-2.48-4.295-4.484 7.767h6.964z"/>
+                </svg>
+                <span>ArtStation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section contact" id="contacto">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-info">
+            <span class="section-tag">// CONTACTO</span>
+            <h2 class="section-title">¿Tienes una idea o buscas diseñador?</h2>
+            <p class="contact-desc">
+              Estoy abierto a colaboraciones para game jams, proyectos indie, consultoría de diseño o puestos a jornada completa en estudios.
+            </p>
+
+            <div class="contact-direct-items">
+              <div class="contact-direct-item">
+                <span class="contact-label">Email</span>
+                <a href="mailto:tuemail@ejemplo.com" class="contact-value">tuemail@ejemplo.com</a>
+              </div>
+              <div class="contact-direct-item">
+                <span class="contact-label">Discord</span>
+                <span class="contact-value">salva_gd#0000</span>
+              </div>
+              <div class="contact-direct-item">
+                <span class="contact-label">Ubicación</span>
+                <span class="contact-value">Remoto / España</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre o Estudio</label>
+              <input type="text" id="name" name="name" placeholder="Ej: Kojima Productions / Alejandro" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Tu Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="ejemplo@estudio.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Tipo de Proyecto / Asunto</label>
+              <input type="text" id="subject" name="subject" placeholder="Ej: Prototipado para juego de acción" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="4" placeholder="Cuéntame sobre el juego o rol que tienes en mente..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <span>Enviar Mensaje</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL PARA DETALLE DEL PROYECTO (FICHA GDD) -->
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar modal">&times;</button>
+      <div id="modal-body">
+        <!-- El contenido se inyecta dinámicamente con JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="current-year"></span> Salva. Diseñado &amp; Desarrollado con HTML, CSS y JavaScript.</p>
+      <a href="#hero" class="back-to-top" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#311042" />
+    </linearGradient>
+    <linearGradient id="glow1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <radialGradient id="portal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#818cf8" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#4f46e5" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.07" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg1)" />
+  <rect width="800" height="500" fill="url(#grid)" />
+
+  <!-- Sci-fi Level Geometry -->
+  <g opacity="0.4" stroke="#6366f1" stroke-width="2" fill="none">
+    <polygon points="100,420 280,360 480,420 300,480" />
+    <polygon points="320,350 480,300 640,350 480,400" />
+    <polygon points="150,280 280,240 400,280 270,320" />
+    <line x1="280" y1="360" x2="280" y2="240" stroke-dasharray="4,4" />
+    <line x1="480" y1="420" x2="480" y2="300" stroke-dasharray="4,4" />
+  </g>
+
+  <!-- Glowing Portal & Rings -->
+  <circle cx="480" cy="220" r="140" fill="url(#portal)" />
+  <circle cx="480" cy="220" r="110" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="8,12" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" from="0 480 220" to="360 480 220" dur="25s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="480" cy="220" r="85" fill="none" stroke="#c084fc" stroke-width="3" stroke-dasharray="15,10" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate" from="360 480 220" to="0 480 220" dur="18s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Player / Marker Silhouettes -->
+  <circle cx="280" cy="230" r="6" fill="#38bdf8" />
+  <circle cx="280" cy="230" r="14" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.5" />
+  <line x1="280" y1="230" x2="400" y2="180" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.7" />
+
+  <!-- HUD Design Overlays -->
+  <rect x="40" y="40" width="160" height="40" rx="6" fill="#0f172a" fill-opacity="0.8" stroke="#475569" stroke-width="1" />
+  <text x="55" y="65" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="bold">SYSTEM: TIME-WARP</text>
+  
+  <rect x="620" y="40" width="140" height="28" rx="4" fill="#0f172a" fill-opacity="0.8" stroke="#6366f1" stroke-width="1" />
+  <text x="635" y="58" fill="#e2e8f0" font-family="monospace" font-size="11">LVL DESIGN v2.4</text>
+
+  <!-- Bottom Gradient Accent -->
+  <rect x="0" y="492" width="800" height="8" fill="url(#glow1)" />
+</svg>
