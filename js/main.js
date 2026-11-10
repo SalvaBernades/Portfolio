@@ -133,93 +133,120 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. BASE DE DATOS DE PROYECTOS Y MODAL DE DISEÑO (FICHA GDD)
   // ============================================================
   const projectsData = {
-    'chrono-shift': {
-      title: 'Chrono-Shift: Puzzle Platformer',
-      category: 'Game Design & Level Design',
-      engine: 'Unity (C#)',
-      genre: '2.5D Puzzle Platformer',
-      role: 'Lead Game Designer / Level Architect',
-      timeline: '4 meses (Prototipo jugable)',
-      summary: 'Un juego de plataformas donde el tiempo no avanza si el jugador permanece inmóvil. El reto de diseño radicaba en crear acertijos cinéticos donde el timing y la inercia física fueran transferibles a través de anomalías temporales.',
+    'slingshot-arcana': {
+      title: 'Slingshot Arcana: Duelos Mágicos en Realidad Virtual',
+      category: 'VR Multiplayer · Game & Systems Design',
+      engine: 'Unity / 6DoF VR (Meta Quest 2/3, Valve Index, HTC Vive)',
+      genre: 'Competitive VR Spellcaster',
+      role: 'Salvador Bernades (Game Designer & Programmer) · Equipo de 5',
+      timeline: 'Milestone 1 (GDD Técnico & Prototipado)',
+      modalImage: 'assets/images/projects/GDD-Proyecto-VR-image12.png',
+      summary: 'Slingshot Arcana es un juego multijugador competitivo de duelos mágicos en tiempo real para Realidad Virtual. La innovación central radica en el sistema de casteo: el jugador sostiene un libro mágico en una mano y proyectiles arcanos en la otra, emulando la tensión física de un tirachinas con los mandos 6DoF para graduar potencia, velocidad y parábola en combate.',
       pillars: [
-        '<strong>Inercia Preservada:</strong> La velocidad acumulada por el jugador se mantiene congelada y se libera estratégicamente al reanudar el flujo.',
-        '<strong>Claridad Visual (Affordance):</strong> Todos los objetos manipulables por el tiempo emiten un tono cian fosforescente inconfundible.',
-        '<strong>Cero Frustración Injusta:</strong> Rebobinado instantáneo de los últimos 5 segundos sin pantallas de "Game Over".'
+        '<strong>Casteo Físico Inmersivo:</strong> La tensión y orientación gestual del tirachinas sustituyen al apuntado automático o casteo por botones, logrando una sensación cinestésica gratificante y alta expresión de habilidad.',
+        '<strong>Matriz Elemental Táctica:</strong> 4 hechizos diferenciados: Fuego (20 daño directo + 10 DoT de quemadura por 4s, 10s cooldown), Electricidad (10 daño, veloz e inmoviliza al rival, 15s cooldown), Hielo (10 daño y silencia el casteo rival durante 2s, 15s cooldown) y Vacío (teletransporte táctico a la zona de impacto, 8s cooldown).',
+        '<strong>Arena Dinámica con Dummies:</strong> Maniquíes reactivos que emergen del suelo durante el combate; impactarlos permite reconfigurar muros de cobertura, restaurar maná o cambiar de munición pasando página del libro.'
       ],
       mechanics: [
-        'Sistema de "Time Anchor": El jugador planta un ancla y regresa a esa posición guardando su vector de velocidad.',
-        'Proyectiles estáticos: Los disparos enemigos sirven de plataformas temporales si se congelan a tiempo.',
-        'Curva de dificultad modular con niveles opcionales de alta exigencia de timing.'
+        'Sistema de cambio de proyectil interactivo pasando página en el libro arcano o cogiéndolo del cinturón háptico.',
+        'Gestión de recurso de maná y cooldowns calculados para evitar el spam y forzar la alternancia de hechizos.',
+        'Diseño de accesibilidad y confort VR: espacio guardián delimitado de 2x2m y locomoción suave con opción de teletransporte corto para mitigar el motion sickness.'
       ],
-      levelDesignNotes: 'Cada nivel fue diseñado primero en cuadrículas de whitebox (bloques grises) garantizando que la mecánica funcionara sin necesidad de arte final. Se aplicaron "líneas de visión guiadas" (Sightlines) para anticipar los objetivos.',
-      demoLink: '#',
-      gddLink: '#'
+      levelDesignNotes: 'La arena de combate fue concebida como un espacio simétrico con pilares y coberturas modulares que equilibran la línea de visión entre ambos duelistas y fomentan el uso de rebotes de hechizos indirectos.',
+      docLink: 'assets/docs/GDD-Slingshot-Arcana-VR.docx',
+      docName: 'GDD Proyecto VR.docx'
     },
-    'aethelgard': {
-      title: 'Echoes of Aethelgard',
-      category: 'Combat & Systems Design',
-      engine: 'Unreal Engine 5 (Blueprints / C++)',
-      genre: 'Souls-lite Action RPG',
-      role: 'Combat & Systems Designer',
-      timeline: '6 meses',
-      summary: 'Diseño integral del sistema de combate cuerpo a cuerpo centrado en la lectura de animaciones enemigas, gestión estricta de resistencia (Stamina) y ventanas de contraataque (Parry).',
+    'robs-george': {
+      title: 'Robs George: Level Design & Puzzles 3D',
+      category: 'Level Design & Puzzle Architecture',
+      engine: 'Unreal Engine (Blueprints & 3D Environment)',
+      genre: '3D Stealth / Puzzle Adventure',
+      role: 'Salvador Bernades (Puzzle & Level Designer, Assets 3D & Doc)',
+      timeline: 'Final Delivery · Trabajo en Equipo',
+      modalImage: 'assets/images/projects/Final-Delivery-Level-Design-image2.png',
+      summary: 'Nivel 3D completo de infiltración residencial donde el jugador encarna a un ladrón que entra por el balcón con el objetivo de robar y capturar al escurridizo gato George. El foco del proyecto fue estructurar un ritmo (pacing) variado que transformase la exploración de habitaciones en una experiencia tensa pero cómica.',
       pillars: [
-        '<strong>Legibilidad del Golpe:</strong> Telegrafiado evidente en los ataques enemigos (anticipación de 12 a 24 frames antes del impacto).',
-        '<strong>Decisión de Riesgo/Recompensa:</strong> Parries exitosos restauran el 30% del medidor de energía y desequilibran al enemigo.',
-        '<strong>Game Feel de Impacto:</strong> Implementación de Hit-stop de 4 frames, vibración de cámara y retroceso acústico en golpes críticos.'
+        '<strong>Modulación del Ritmo (Pacing en Crescendo):</strong> Comienzo pausado y calculador en el balcón, exploración reflexiva con deducción en el salón y resolución final caótica en el dormitorio.',
+        '<strong>Diversidad Mecánica sin Fricción:</strong> Cada habitación introduce una mecánica diferente (QTE de habilidad -> Reconocimiento de patrones visuales -> Persecución física espacial) evitando la monotonía de saquear cajones.',
+        '<strong>Affordance y Señalización Visual:</strong> Cuadros con gatos numerados colocados de forma estratégica para sugerir la combinación de la caja fuerte sin necesidad de textos explicativos.'
       ],
       mechanics: [
-        'Matriz de vulnerabilidad: 3 tipos de daño elemental acoplados a debilidades físicas de cada arquetipo de enemigo.',
-        'Sistema de IA por capas de agresividad (Token System) para evitar que múltiples enemigos ataquen al mismo milisegundo de forma injusta.',
-        'Árbol de talentos sinérgico con builds orientadas a agilidad o fuerza bruta.'
+        'Puzzle 1 (Balcón - Lockpick): Minijuego con aguja oscilante en barra horizontal. Acertar 3 veces en la zona verde abre la puerta sigilosamente sumando puntuación; fallar hace que el ladrón derribe la puerta a patadas perdiendo sigilo.',
+        'Puzzle 2 (Salón - Caja Fuerte): Caja oculta tras una pintura con 4 botones de colores. El jugador deduce la secuencia correcta según las pistas ambientales (Negro -> Blanco -> Gris -> Naranja) para desbloquear la llave del pasillo.',
+        'Puzzle 3 (Dormitorio Principal - Catch the Cat): El gato George corre a gran velocidad escondiéndose bajo la cama, armarios y sábanas. El jugador debe calcular su trayectoria y atraparlo con una bolsa para concluir el nivel.'
       ],
-      levelDesignNotes: 'Estructuración de arenas de combate circulares con obstáculos destructibles que permiten romper líneas de visión enemigas y respirar.',
-      demoLink: '#',
-      gddLink: '#'
+      levelDesignNotes: 'Diseño arquitectónico en planta en L. Se integraron coleccionables opcionales en la cocina y salón para premiar la exploración con riesgo antes de afrontar el dormitorio principal. Greyboxing probado para garantizar fluidez sin atascos en puertas.',
+      docLink: 'assets/docs/Level-Design-Robs-George.docx',
+      docName: 'Final Delivery Level Design.docx'
     },
-    'neon-syndicate': {
-      title: 'Neon Syndicate: Infiltración Táctica',
-      category: 'UI/UX & AI Systems',
-      engine: 'Prototipo en Figma + Motor Propietario',
-      genre: 'Cyberpunk Stealth Tactics',
-      role: 'UI/UX Lead & AI Behavior Designer',
-      timeline: '3 meses',
-      summary: 'Concepción del HUD no intrusivo y mapa de estados de inteligencia artificial enemiga para un juego de sigilo táctico con cámara isométrica.',
+    'eco-city-rescue': {
+      title: 'Eco-City Rescue! Serious Game & Concienciación',
+      category: 'Game Design Document · Serious Games',
+      engine: 'Multiplataforma (PC / Smartphone / WebGL)',
+      genre: 'Educational / Time-Management Sim',
+      role: 'Salvador Bernades (Lead Game & Systems Designer)',
+      timeline: 'GDD Completo (Empathy, Ideation & Prototyping)',
+      modalImage: 'assets/images/projects/Eco-City-Rescue-image7.png',
+      summary: 'Game Design Document (GDD) detallado para un videojuego formativo dirigido a jóvenes (13 a 20 años). El juego aborda la emergencia ecológica transformando hábitos cotidianos desapercibidos (desperdicio energético, clasificación incorrecta de residuos) en micro-desafíos dinámicos con feedback visual inmediato.',
       pillars: [
-        '<strong>Minimizar la Carga Cognitiva:</strong> El jugador debe entender el estado de sospecha de los guardias a simple vista mediante códigos de color semafóricos en el HUD.',
-        '<strong>Espacialización del Audio:</strong> Anillos visuales concéntricos que muestran el radio de ruido generado por las pisadas del jugador.',
-        '<strong>Menús Táctiles Inmersivos:</strong> El inventario de ciberware se integra como una proyección holográfica diegética dentro del mundo.'
+        '<strong>Aprender Haciendo (Learn by Doing):</strong> Sustitución de cuestionarios teóricos por mecánicas cinéticas de arrastre y clasificación rápida bajo presión temporal.',
+        '<strong>Causa y Efecto Inmediato:</strong> La barra de salud del hogar y del entorno se degrada visiblemente en tiempo real si el jugador descuida las luces encendidas o mezcla residuos peligrosos.',
+        '<strong>Diseño de Bajo Requisito Técnico:</strong> Especificaciones pensadas para ejecutarse con fluidez en ordenadores de aulas escolares y smartphones sin necesidad de tarjetas gráficas dedicadas.'
       ],
       mechanics: [
-        'Máquina de estados finita (FSM) de la IA: Rutina -> Alerta Sospechosa -> Búsqueda en Grupo -> Combate.',
-        'Hackeo de cámaras de seguridad con mini-puzzle de conexiones en tiempo bala.',
-        'Inventario con balance estricto de consumo de memoria neuronal (RAM) como recurso limitante.'
+        'Minijuego de clasificación de residuos: Diferenciación de basura orgánica, plásticos, pilas/baterías y componentes electrónicos que caen a distintas velocidades hacia los contenedores correctos.',
+        'Minijuego de eficiencia doméstica: Navegación contrarreloj por las estancias apagando luces y aparatos en reposo tras la salida de familiares para conservar el medidor de energía.',
+        'Objetivos de aprendizaje integrados: Sensibilización sobre el ciclo de vida de los materiales y comparativa entre fuentes de energía renovable y no renovable.'
       ],
-      levelDesignNotes: 'Rutas triples clásicas de sigilo: conducto de ventilación (lento y seguro), pasillo principal (arriesgado con patrullas) y terminal de hackeo (requiere recursos).',
-      demoLink: '#',
-      gddLink: '#'
+      levelDesignNotes: 'Estructuración progresiva de niveles en 3 actos: el ámbito individual (tu propia habitación), el ámbito familiar (la casa) y el ámbito social (el parque y la escuela), incrementando la escala del impacto.',
+      docLink: 'assets/docs/Eco-City-Rescue-GDD.docx',
+      docName: 'Eco City Rescue.docx'
     },
-    'tiny-horizons': {
-      title: 'Tiny Horizons: Colonización Flotante',
-      category: 'Game Design & Economy',
-      engine: 'Godot Engine 4',
-      genre: 'Cozy Builder / Economy Sim',
-      role: 'Economy & Balance Designer',
-      timeline: '2 meses (Game Jam & Expansión)',
-      summary: 'Juego de gestión relajante donde el jugador expande un archipiélago de islas flotantes hexagonales equilibrando producción de alimentos, felicidad y energía eólica.',
+    'evo-workout': {
+      title: 'EvoWorkout: Gamificación Fitness & Progresión',
+      category: 'Game Systems & UX Design',
+      engine: 'Mobile App / Gamification System',
+      genre: 'Fitness RPG / Virtual Creature Evolution',
+      role: 'Salvador Bernades (Game Systems & UX Designer)',
+      timeline: 'Challenge 2 · Definición y Arquitectura de Sistemas',
+      modalImage: 'assets/images/projects/EvoWorkout-cover.png',
+      summary: 'Propuesta de diseño de sistemas y gamificación enfocada a resolver el problema de deserción en los gimnasios (falta de motivación a corto plazo y aislamiento). El progreso físico real se materializa en la evolución estética, anatómica y de atributos de una criatura virtual que actúa como avatar emocional.',
       pillars: [
-        '<strong>Sensación Zen sin Bloqueos:</strong> No hay condiciones de "Game Over", sino incentivos continuos para optimizar la armonía de la colonia.',
-        '<strong>Economía en Bucle Cerrado:</strong> Cada recurso producido alimenta directamente la construcción de la siguiente isla temática.',
-        '<strong>Interactividad Háptica:</strong> Colocar piezas produce una suave animación de rebote y partículas de hojas que hacen adictivo el acto de expandir.'
+        '<strong>Avatar Emocional Evolutivo:</strong> Cada serie, repetición y día de asistencia alimenta el crecimiento y las ramas evolutivas de la criatura (fuerza, resistencia, agilidad), haciendo tangible el esfuerzo.',
+        '<strong>Validación Social Positiva:</strong> Verificación de técnica mediante vídeos cortos entre usuarios con recompensas mutuas, creando comunidad y eliminando la intimidación del principiante.',
+        '<strong>Gratificación Inmediata vs Resultados Lentos:</strong> Sustitución del desánimo por la lentitud de los cambios físicos corporales por micro-recompensas visuales y cosméticas tras cada entrenamiento.'
       ],
       mechanics: [
-        'Modelo matemático de balance económico creado y simulado en Google Sheets antes de la implementación.',
-        'Generación procedural de biomas respetando reglas de adyacencia (las granjas rinden el doble junto al agua).',
-        'Sistema de misiones dinámicas generadas a partir de los déficits de la colonia.'
+        'Árbol de metamorfosis de criaturas: Rutas evolutivas sinérgicas según la tipología de entrenamiento (calistenia, levantamiento pesado, cardio, hipertrofia).',
+        'Sistema "Streak Keeper" y retos cooperativos semanales para romper la monotonía y consolidar hábitos saludables.',
+        'Diseño de UI de mínima fricción: Registro rápido de cargas y repeticiones a una mano con háptica optimizada para el descanso entre series.'
       ],
-      levelDesignNotes: 'Diseño del algoritmo de crecimiento de terreno para garantizar que nunca se generen islas aisladas o inaccesibles para el transporte de recursos.',
-      demoLink: '#',
-      gddLink: '#'
+      levelDesignNotes: 'Arquitectura de flujo UX con bucles de retorno diarios y semanales, evitando la saturación competitiva tóxica y primando el progreso personal sobre marcadores punitivos.',
+      docLink: 'assets/docs/EvoWorkout-Game-Design.docx',
+      docName: 'EvoWorkout.docx'
+    },
+    'abilities-system': {
+      title: 'RPG Abilities & Progression Systems Architecture',
+      category: 'Systems Architecture & Combat Balancing',
+      engine: 'Documentación Técnica de Diseño / Multi-engine',
+      genre: 'Action RPG / System Mechanics Framework',
+      role: 'Salvador Bernades (Systems & Combat Designer)',
+      timeline: 'Investigación Técnica y Guía de Arquitectura',
+      modalImage: 'assets/images/projects/ABILITIES-SYSTEM-image4.png',
+      summary: 'Estudio y framework técnico de diseño sobre los principales paradigmas de sistemas de habilidades en RPGs: sistemas basados en clases fijas, árboles de habilidades ramificados (Skill Trees), asignación directa de puntos de atributo, aprendizaje por experiencia directa (Learn by Doing) y sistemas de combos y sinergias.',
+      pillars: [
+        '<strong>Identidad y Expresión de Build:</strong> Brindar opciones transparentes para que el jugador cree arquetipos viables tanto especializados como híbridos sin toparse con muros artificiales.',
+        '<strong>Economía de Combate Balanceada:</strong> Ecuación de coste/beneficio donde el daño y la utilidad se equilibran rigurosamente con el coste de maná/stamina, tiempo de casteo y cooldown.',
+        '<strong>Sinergias Dinámicas y Combos:</strong> Recompensar la alternancia estratégica de habilidades (estados alterados, cancelaciones de animación y ventanas de vulnerabilidad).'
+      ],
+      mechanics: [
+        'Modelado comparativo de 5 arquitecturas: Class-Based (World of Warcraft), Skill Trees (Skyrim), Stat Allocation (Dragon Age), Learn by Doing (Dark Souls) y Combo-Based Systems.',
+        'Diseño de matrices de tiempo de reutilización (cooldowns) y rendimientos decrecientes para evitar habilidades dominantes.',
+        'Estructura de perks pasivos y modificadores condicionales que alteran la respuesta del Core Loop en combate.'
+      ],
+      levelDesignNotes: 'Diseño de sistemas preparado para integrarse con el ritmo de progresión de niveles y curvas de dificultad de jefes y encuentros multitudinarios.',
+      docLink: 'assets/docs/Abilities-System-Architecture.docx',
+      docName: 'ABILITIES SYSTEM.docx'
     }
   };
 
@@ -236,12 +263,18 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="modal-project-category">${data.category}</span>
         <h2 class="modal-project-title">${data.title}</h2>
         <div class="modal-project-meta">
-          <div><strong>Motor:</strong> ${data.engine}</div>
+          <div><strong>Motor / Entorno:</strong> ${data.engine}</div>
           <div><strong>Género:</strong> ${data.genre}</div>
           <div><strong>Rol:</strong> ${data.role}</div>
-          <div><strong>Duración:</strong> ${data.timeline}</div>
+          <div><strong>Hito / Tipo:</strong> ${data.timeline}</div>
         </div>
       </div>
+
+      ${data.modalImage ? `
+        <div class="modal-image-wrapper">
+          <img src="${data.modalImage}" alt="${data.title}" class="modal-banner-img">
+        </div>
+      ` : ''}
 
       <div class="modal-section">
         <h3 class="modal-section-title">
@@ -274,17 +307,18 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="modal-section">
         <h3 class="modal-section-title">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-          Estrategia de Level Design / Pacing
+          Estrategia de Level Design / Pacing / Arquitectura
         </h3>
         <p>${data.levelDesignNotes}</p>
       </div>
 
       <div class="modal-actions">
-        <a href="${data.demoLink}" class="btn btn-primary" onclick="alert('Enlace de ejemplo: aquí puedes vincular tu build jugable en Itch.io o Steam.')">
-          <span>Jugar Prototipo</span>
+        <a href="${data.docLink}" download="${data.docName}" class="btn btn-primary" title="Descargar documento de diseño completo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Descargar Documento GDD (.docx)</span>
         </a>
-        <a href="${data.gddLink}" class="btn btn-secondary" onclick="alert('Enlace de ejemplo: aquí puedes enlazar el documento PDF o Notion con tu GDD completo.')">
-          <span>Ver GDD Completo</span>
+        <a href="#contacto" class="btn btn-secondary" onclick="closeModal()">
+          <span>Contactar sobre este Proyecto</span>
         </a>
       </div>
     `;

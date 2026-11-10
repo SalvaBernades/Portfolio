@@ -26,14 +26,17 @@ Un sitio web portfolio moderno, limpio, ultra rápido y sin sobrecarga visual, c
 ├── css/
 │   └── style.css              # Estilos, variables y media queries
 ├── js/
-│   └── main.js                # Lógica de filtros, modal GDD, audio y canvas
+│   └── main.js                # Lógica de filtros, modales GDD, audio y canvas
 └── assets/
-    └── images/                # Ilustraciones y recursos
-        ├── avatar.svg         # Avatar de perfil
-        ├── project-1.svg      # Imagen del Proyecto 1 (Plataformas / Tiempo)
-        ├── project-2.svg      # Imagen del Proyecto 2 (Combate Melee)
-        ├── project-3.svg      # Imagen del Proyecto 3 (HUD / Sigilo)
-        └── project-4.svg      # Imagen del Proyecto 4 (Economía / Islas)
+    ├── docs/                  # Documentos técnicos descargables (GDDs en .docx)
+    │   ├── GDD-Slingshot-Arcana-VR.docx
+    │   ├── Level-Design-Robs-George.docx
+    │   ├── Eco-City-Rescue-GDD.docx
+    │   ├── EvoWorkout-Game-Design.docx
+    │   └── Abilities-System-Architecture.docx
+    └── images/                # Recursos gráficos y capturas
+        ├── salvador.jpg       # Foto de perfil
+        └── projects/          # Capturas, greyboxing y diagramas reales
 ```
 
 ---
