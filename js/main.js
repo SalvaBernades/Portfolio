@@ -153,6 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Diseño de accesibilidad y confort VR: espacio guardián delimitado de 2x2m y locomoción suave con opción de teletransporte corto para mitigar el motion sickness.'
       ],
       levelDesignNotes: 'La arena de combate fue concebida como un espacio simétrico con pilares y coberturas modulares que equilibran la línea de visión entre ambos duelistas y fomentan el uso de rebotes de hechizos indirectos.',
+      pdfLink: 'assets/docs/Slingshot-Arcana-VR-GDD.pdf',
+      pdfName: 'Slingshot-Arcana-VR-GDD.pdf',
       docLink: 'assets/docs/GDD-Slingshot-Arcana-VR.docx',
       docName: 'GDD Proyecto VR.docx'
     },
@@ -176,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Puzzle 3 (Dormitorio Principal - Catch the Cat): El gato George corre a gran velocidad escondiéndose bajo la cama, armarios y sábanas. El jugador debe calcular su trayectoria y atraparlo con una bolsa para concluir el nivel.'
       ],
       levelDesignNotes: 'Diseño arquitectónico en planta en L. Se integraron coleccionables opcionales en la cocina y salón para premiar la exploración con riesgo antes de afrontar el dormitorio principal. Greyboxing probado para garantizar fluidez sin atascos en puertas.',
+      pdfLink: 'assets/docs/Level-Design-Robs-George.pdf',
+      pdfName: 'Level-Design-Robs-George.pdf',
       docLink: 'assets/docs/Level-Design-Robs-George.docx',
       docName: 'Final Delivery Level Design.docx'
     },
@@ -199,6 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Objetivos de aprendizaje integrados: Sensibilización sobre el ciclo de vida de los materiales y comparativa entre fuentes de energía renovable y no renovable.'
       ],
       levelDesignNotes: 'Estructuración progresiva de niveles en 3 actos: el ámbito individual (tu propia habitación), el ámbito familiar (la casa) y el ámbito social (el parque y la escuela), incrementando la escala del impacto.',
+      pdfLink: 'assets/docs/Eco-City-Rescue-GDD.pdf',
+      pdfName: 'Eco-City-Rescue-GDD.pdf',
       docLink: 'assets/docs/Eco-City-Rescue-GDD.docx',
       docName: 'Eco City Rescue.docx'
     },
@@ -222,6 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Diseño de UI de mínima fricción: Registro rápido de cargas y repeticiones a una mano con háptica optimizada para el descanso entre series.'
       ],
       levelDesignNotes: 'Arquitectura de flujo UX con bucles de retorno diarios y semanales, evitando la saturación competitiva tóxica y primando el progreso personal sobre marcadores punitivos.',
+      pdfLink: 'assets/docs/EvoWorkout-Game-Design.pdf',
+      pdfName: 'EvoWorkout-Game-Design.pdf',
       docLink: 'assets/docs/EvoWorkout-Game-Design.docx',
       docName: 'EvoWorkout.docx'
     },
@@ -245,6 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Estructura de perks pasivos y modificadores condicionales que alteran la respuesta del Core Loop en combate.'
       ],
       levelDesignNotes: 'Diseño de sistemas preparado para integrarse con el ritmo de progresión de niveles y curvas de dificultad de jefes y encuentros multitudinarios.',
+      pdfLink: 'assets/docs/Abilities-System-Architecture.pdf',
+      pdfName: 'Abilities-System-Architecture.pdf',
       docLink: 'assets/docs/Abilities-System-Architecture.docx',
       docName: 'ABILITIES SYSTEM.docx'
     }
@@ -313,12 +323,12 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="modal-actions">
-        <a href="${data.docLink}" download="${data.docName}" class="btn btn-primary" title="Descargar documento de diseño completo">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Descargar Documento GDD (.docx)</span>
+        <a href="${data.pdfLink}" target="_blank" download="${data.pdfName}" class="btn btn-primary" title="Abrir y descargar documento GDD en PDF">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Descargar Documento GDD (PDF)</span>
         </a>
-        <a href="#contacto" class="btn btn-secondary" onclick="closeModal()">
-          <span>Contactar sobre este Proyecto</span>
+        <a href="${data.docLink}" download="${data.docName}" class="btn btn-secondary" title="Descargar versión original editable en Word">
+          <span>Descargar DOCX</span>
         </a>
       </div>
     `;
